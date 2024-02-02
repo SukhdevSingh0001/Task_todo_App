@@ -87,6 +87,14 @@ const TodoApp = () => {
 
 
     function SaveValues() {
+        if (!arr.Name || !arr.phoneno || !arr.addTime || !arr.descriptionValue) {
+            Swal.fire({
+                title: "Error",
+                text: "All fields are required",
+                icon: "error",
+            });
+            return;
+        }
         let storedData = localStorage.getItem('data');
         let arr1 = JSON.parse(storedData) || [];
         if (!Array.isArray(arr1)) {
