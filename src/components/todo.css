@@ -32,6 +32,7 @@
       display: grid;
       width: 22rem;
       height: 15rem;
+      
 
      }
      .swal2-shown,
@@ -170,8 +171,9 @@ flex-wrap: wrap;
 .swal2-popup, .swal2-modal, .swal2-icon-success, .swal2-show {
   padding: 0;
   display: grid;
-  width: 16rem;
-  height: 15rem;
+  width: 14rem;
+  height: 10rem;
+  font-size: 10px;
 }
 .buttonstodo {
   padding: 4px 19px;
