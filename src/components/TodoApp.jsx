@@ -147,7 +147,7 @@ const[myindex,Setmyindex]=useState()
             text: "",
             icon: "success"
         });
-        document.getElementsByClassName('flexCard')[myindex].style.display='block'
+        document.getElementsByClassName('flexCard')[myindex].style.display='grid'
     
     }
     function handledeleteValue(idx){
@@ -220,6 +220,7 @@ const[myindex,Setmyindex]=useState()
 
                 </div>
             </div>
+            
             <div className="getdataCard">
                 {data.map((e, index) => {
                     return <div className='valueCards' key={index}>
