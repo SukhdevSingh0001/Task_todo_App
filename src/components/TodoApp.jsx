@@ -193,7 +193,7 @@ const[myindex,Setmyindex]=useState()
                         </div>
                         <div>
 
-                            <input className='inputtodo' value={arr.phoneno} type="text" placeholder='Task no.' onChange={phonenumber} required />
+                            <input className='inputtodo' value={arr.phoneno} type="number" placeholder='Task no.' onChange={phonenumber} required />
                         </div>
                     </div>
 
@@ -203,7 +203,7 @@ const[myindex,Setmyindex]=useState()
                     </div>
                     <div>
 
-                        <input className='inputtodo' value={arr.addTime} type="text" placeholder='Add time' onChange={noteTime} required />
+                        <input className='inputtodo' value={arr.addTime} type="number" placeholder='Add time' onChange={noteTime} required />
                     </div>
                     <div>
 
@@ -225,10 +225,10 @@ const[myindex,Setmyindex]=useState()
                     return <div className='valueCards' key={index}>
                         <div className="flexCard">
                      
-                            <h4>Task:{e.Name}</h4>
-                            <h4>Task No:     {e.phoneno}</h4>
-                            <h4>Time:{e.addTime}</h4>
-                            <h4>Description:{e.descriptionValue}</h4>
+                            <span>Task:<span>{e.Name}</span></span>
+                            <span>Task No: <span>     {e.phoneno}</span></span>
+                            <span>Time: <span> {e.addTime}</span></span>
+                            <span>Description: <span> {e.descriptionValue}</span></span>
                             <div className="btnflex">
 
                                 <button onClick={() => handleChangeValue(index)} className='buttonstodo'>Edit</button>
