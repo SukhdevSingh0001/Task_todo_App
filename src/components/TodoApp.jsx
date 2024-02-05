@@ -31,7 +31,7 @@ const[myindex,Setmyindex]=useState()
             lightmodeImage.style.display = "block";
           document.getElementById("modes").style.backgroundColor;
             localStorage.setItem("nowtheme", document.getElementById("modes").style.backgroundColor)
-            document.getElementsByClassName("todocard")[0].style.backgroundColor = "black";
+            document.getElementsByClassName("todocard")[0].style.backgroundColor ="#2b2a2a";
            // document.getElementsByClassName("flexCard").style.display = `none`
 
         }
@@ -51,7 +51,7 @@ const[myindex,Setmyindex]=useState()
             document.getElementById("modes").style.backgroundColor = "black";
             document.getElementsByClassName("modelight")[0].style.filter = 'invert(1)'
             document.getElementsByClassName("modelight")[0].style.display = 'block';
-            document.getElementsByClassName("todocard")[0].style.backgroundColor ="black";
+            document.getElementsByClassName("todocard")[0].style.backgroundColor ="#2b2a2a";
 
 
         }
