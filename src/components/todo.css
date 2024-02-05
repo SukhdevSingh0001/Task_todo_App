@@ -17,6 +17,7 @@
     padding: 46px;
     border-radius: 5px;
     width: 20rem  ;
+    box-shadow: 0px 3px 5px 3px black;
   }
    .swal2-title,
    .my-custom-title-class{
@@ -144,4 +145,41 @@ flex-wrap: wrap;
       z-index: 999;
   
   
+  }
+  @media screen and (min-width: 300px)and (max-width:500px) {
+    .todomain{
+      padding: 30px;
+    }
+    .todocard{
+      padding: 10px;
+    }
+    .lists {
+      margin-bottom: 0px;
+  }
+  .todoheading {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.inputtodo, .textareatodo {
+ 
+  padding: 3px;
+}
+
+.swal2-popup, .swal2-modal, .swal2-icon-success, .swal2-show {
+  padding: 0;
+  display: grid;
+  width: 16rem;
+  height: 15rem;
+}
+.buttonstodo {
+  padding: 4px 19px;
+}
+.deletebtn{
+  padding: 4px 19px;
+}
+.flexCard {
+  width: 15rem;
+}
   }

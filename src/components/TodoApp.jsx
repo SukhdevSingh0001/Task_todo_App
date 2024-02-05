@@ -11,31 +11,28 @@ const TodoApp = () => {
     const [phone, setphone] = useState('');
     const [time, settime] = useState("");
     const [desc, setdescription] = useState("")
-    // const [showPopup, setShowPopup] = useState(false);
-    const [alertConfig, setAlertConfig] = useState(null);
+
 
     const[indexValue,Setindex]=useState()
     
 
-    // const [descriptionValue, setdescription] = useState("");
     const [data, SetData] = useState([]);
     const [arr, setArr] = useState({ Name: "", phoneno: "", descriptionValue: "", addTime: "" });
-    // const arr=[]
+const[myindex,Setmyindex]=useState()
     const darkModeImage = document.getElementsByClassName("modedark")[0];
     const lightmodeImage = document.getElementsByClassName("modelight")[0];
     document.getElementsByClassName("flexCard");
-    let theme;
-
     function changemode() {
         if (document.getElementById("modes").style.backgroundColor == "white") {
+            // document.querySelectorAll('.todocard')[0].style.backgroundColor='#1a204a';
             document.getElementById("modes").style.backgroundColor = "black"
             darkModeImage.style.display = 'none';
             lightmodeImage.style.filter = "invert(100%)";
             lightmodeImage.style.display = "block";
-            theme = document.getElementById("modes").style.backgroundColor;
+          document.getElementById("modes").style.backgroundColor;
             localStorage.setItem("nowtheme", document.getElementById("modes").style.backgroundColor)
-            document.getElementsByClassName("flexCard").style.display = `none`
-
+            document.getElementsByClassName("todocard")[0].style.backgroundColor = "black";
+           // document.getElementsByClassName("flexCard").style.display = `none`
 
         }
         else if (document.getElementById("modes").style.backgroundColor == "black") {
@@ -43,8 +40,9 @@ const TodoApp = () => {
             darkModeImage.style.filter = "invert(0%)";
             darkModeImage.style.display = "block";
             lightmodeImage.style.display = "none";
-            localStorage.setItem("nowtheme", document.getElementById("modes").style.backgroundColor)
+            localStorage.setItem("nowtheme", document.getElementById("modes").style.backgroundColor);
 
+            document.getElementsByClassName("todocard")[0].style.backgroundColor ="#1a204a";
         }
     }
     useEffect(() => {
@@ -53,11 +51,13 @@ const TodoApp = () => {
             document.getElementById("modes").style.backgroundColor = "black";
             document.getElementsByClassName("modelight")[0].style.filter = 'invert(1)'
             document.getElementsByClassName("modelight")[0].style.display = 'block';
+            document.getElementsByClassName("todocard")[0].style.backgroundColor ="black";
 
 
         }
         else if (b == "white") {
             document.getElementById("modes").style.backgroundColor = "white";
+            document.getElementsByClassName("todocard")[0].style.backgroundColor ="#1a204a";
         };
     }, [])
     function nameValue(e) {
@@ -89,8 +89,8 @@ const TodoApp = () => {
     function SaveValues() {
         if (!arr.Name || !arr.phoneno || !arr.addTime || !arr.descriptionValue) {
             Swal.fire({
-                title: "Error",
-                text: "All fields are required",
+                title: "Fields are required",
+                 
                 icon: "error",
             });
             return;
@@ -121,6 +121,8 @@ const TodoApp = () => {
     }
 
     function handleChangeValue(index) {
+        Setmyindex(index)
+         document.getElementsByClassName('flexCard')[index].style.display='none'
         const itemToEdit = data[index];
         Setindex(index)
          
@@ -137,14 +139,15 @@ const TodoApp = () => {
         update[indexValue]=arr;
         localStorage.setItem('data', JSON.stringify(update));
         setArr({ Name: "", phoneno: "", descriptionValue: "", addTime: "" });
-
+        
         document.getElementsByClassName('buttontodo')[1].style.display = 'none'
         document.getElementsByClassName('buttontodo')[0].style.display = 'block'
         Swal.fire({
             title: "Updated",
             text: "",
             icon: "success"
-          });
+        });
+        document.getElementsByClassName('flexCard')[myindex].style.display='block'
     
     }
     function handledeleteValue(idx){
@@ -173,7 +176,7 @@ const TodoApp = () => {
                 <img className='modelight' style={{ display: "none" }} src={lightmode} alt="" onClick={changemode} />
             </div>
             <div className="todomain">
-                <div className="todocard">
+                <div className="todocard" id='cardbg'>
                     <h1 className='todoheading'>Todo App</h1>
                     <div className="lists">
                         <div>
@@ -182,7 +185,7 @@ const TodoApp = () => {
                         </div>
                         <div>
 
-                            <input className='inputtodo' type="text" value={arr.Name} placeholder='enter task' onChange={nameValue} required />
+                            <input className='inputtodo' type="text" value={arr.Name} placeholder='Enter task' onChange={nameValue} required />
                         </div>
                         <div>
                             <label className='todolable' htmlFor="">Task No.</label>
@@ -190,7 +193,7 @@ const TodoApp = () => {
                         </div>
                         <div>
 
-                            <input className='inputtodo' value={arr.phoneno} type="text" placeholder='task no.' onChange={phonenumber} required />
+                            <input className='inputtodo' value={arr.phoneno} type="text" placeholder='Task no.' onChange={phonenumber} required />
                         </div>
                     </div>
 
@@ -208,11 +211,11 @@ const TodoApp = () => {
                     </div>
                     <div>
 
-                        <textarea className='textareatodo' value={arr.descriptionValue} style={{ resize: 'none' }} name="" id="" cols="20" rows="5" placeholder='desc...' onChange={description} required></textarea>
+                        <textarea className='textareatodo' value={arr.descriptionValue} style={{ resize: 'none' }} name="" id="" cols="20" rows="5" placeholder='Desc...' onChange={description} required></textarea>
                     </div>
                     <div className="btntodo">
                         <input className='buttontodo' onClick={SaveValues} type="submit" value="Submit" />
-                        <button className='buttontodo' style={{ display: 'none' }} onClick={ updatedValue}>Update</button>
+                        <button className='buttontodo' style={{ display: 'none' }} onClick={updatedValue}>Update</button>
                     </div>
 
                 </div>

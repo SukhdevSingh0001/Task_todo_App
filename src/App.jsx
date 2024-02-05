@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState, useEffect } from 'react'
+// import './app.css'
+// import TodoApp from './components/TodoApp'
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   // const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+//   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-export default App
+//   // Function to toggle between light and dark themes
+//   const toggleTheme = () => {
+//     setIsDarkTheme((prevTheme) => !prevTheme);
+//   };
+
+//   const mainDivStyle = {
+//     background: 'var(--background-color)',
+//   };
+
+//   // Effect to update the CSS variables when the theme changes
+//   useEffect(() => {
+//     const root = document.documentElement;
+//     const themeVariables = isDarkTheme
+//       ? {
+//         '--background-color': '#282c35',
+//         '--text-color': '#ffffff',
+//       }
+//       : {
+//         '--background-color': '#ffffff',
+//         '--text-color': '#000000',
+//       };
+
+//     Object.entries(themeVariables).forEach(([key, value]) => {
+//       root.style.setProperty(key, value);
+//     });
+//   }, [isDarkTheme]);
+
+
+//   return (
+//     <div style={mainDivStyle}>
+//       <TodoApp isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
+
+//     </div>
+//   )
+// }
+
+// export default App
