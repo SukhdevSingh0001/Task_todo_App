@@ -198,12 +198,12 @@ const[myindex,Setmyindex]=useState()
                     </div>
 
                     <div>
-                        <label className='todolable' htmlFor=""> Add Time</label>
+                        <label className='todolable' htmlFor=""> Add Date</label>
 
                     </div>
                     <div>
 
-                        <input className='inputtodo' value={arr.addTime} type="number" placeholder='Add time' onChange={noteTime} required />
+                        <input className='inputtodo' value={arr.addTime} type="date" placeholder='Add time' onChange={noteTime} required style={{cursor:'pointer'}} />
                     </div>
                     <div>
 
@@ -228,7 +228,7 @@ const[myindex,Setmyindex]=useState()
                      
                             <span>Task:<span>{e.Name}</span></span>
                             <span>Task No: <span>     {e.phoneno}</span></span>
-                            <span>Time: <span> {e.addTime}</span></span>
+                            <span>Date: <span> {e.addTime}</span></span>
                             <span>Description: <span> {e.descriptionValue}</span></span>
                             <div className="btnflex">
 
